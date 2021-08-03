@@ -1,6 +1,15 @@
 # Syslog protocol
 
+Based on https://github.com/eric/syslog_protocol
+
 roughly conforms to the murky shade of grey known as http://www.faqs.org/rfcs/rfc3164.html
+
+## Changes
+
+- Rename to syslog_protocol_ms
+- lib/syslog_protocol_ms/packet.rb
+  - `time.strftime("%b #{day} %H:%M:%S")` -> `time.strftime("%b #{day} %H:%M:%S.%3N")`
+
 
 ## Examples
 
