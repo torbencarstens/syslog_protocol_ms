@@ -3,7 +3,7 @@ require File.expand_path('../helper', __FILE__)
 describe "syslog packet parser" do
 
   it "parse some valid packets" do
-    p = SyslogProtocolMs.parse("<34>Oct 11 22:14:15 mymachine su: 'su root' failed for lonvick on /dev/pts/8")
+    p = SyslogProtocol.parse("<34>Oct 11 22:14:15 mymachine su: 'su root' failed for lonvick on /dev/pts/8")
     p.facility.should.equal 4
     p.severity.should.equal 2
     p.pri.should.equal 34
@@ -12,7 +12,7 @@ describe "syslog packet parser" do
     p.content.should.equal "'su root' failed for lonvick on /dev/pts/8"
     p.time.should.equal Time.parse("Oct 11 22:14:15")
 
-    p = SyslogProtocolMs.parse("<13>Feb  5 17:32:18 10.0.0.99 test: Use the BFG!")
+    p = SyslogProtocol.parse("<13>Feb  5 17:32:18 10.0.0.99 test: Use the BFG!")
     p.facility.should.equal 1
     p.severity.should.equal 5
     p.pri.should.equal 13
@@ -23,7 +23,7 @@ describe "syslog packet parser" do
   end
 
   it "treat a packet with no valid PRI as all content, setting defaults" do
-    p = SyslogProtocolMs.parse("nomnom")
+    p = SyslogProtocol.parse("nomnom")
     p.facility.should.equal 1
     p.severity.should.equal 5
     p.pri.should.equal 13
@@ -32,7 +32,7 @@ describe "syslog packet parser" do
   end
 
   it "PRI with preceding 0's shall be considered invalid" do
-    p = SyslogProtocolMs.parse("<045>Oct 11 22:14:15 space_station my PRI is not valid")
+    p = SyslogProtocol.parse("<045>Oct 11 22:14:15 space_station my PRI is not valid")
     p.facility.should.equal 1
     p.severity.should.equal 5
     p.pri.should.equal 13
@@ -41,7 +41,7 @@ describe "syslog packet parser" do
   end
 
   it "allow the user to pass an origin to be used as the hostname if packet is invalid" do
-    p = SyslogProtocolMs.parse("<045>Oct 11 22:14:15 space_station my PRI is not valid", '127.0.0.1')
+    p = SyslogProtocol.parse("<045>Oct 11 22:14:15 space_station my PRI is not valid", '127.0.0.1')
     p.facility.should.equal 1
     p.severity.should.equal 5
     p.pri.should.equal 13

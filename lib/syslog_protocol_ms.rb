@@ -3,6 +3,6 @@ require 'syslog_protocol_ms/packet'
 require 'syslog_protocol_ms/logger'
 require 'syslog_protocol_ms/parser'
 
-module SyslogProtocolMs
+module SyslogProtocol
   VERSION = '0.10.0'
 end

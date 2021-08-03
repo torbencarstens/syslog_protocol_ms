@@ -3,11 +3,11 @@ require File.expand_path('../helper', __FILE__)
 describe "syslog logger" do
 
   it "create a new logger with hostname and facility" do
-    lambda {@logger = SyslogProtocolMs::Logger.new("space_station", 'test', "local0")}.should.not.raise
+    lambda {@logger = SyslogProtocol::Logger.new("space_station", 'test', "local0")}.should.not.raise
   end
 
   it "hostname and facility must conform to the requirements of a Packet" do
-    lambda {SyslogProtocolMs::Logger.new("space station", "some shit", 'test test')}.should.raise ArgumentError
+    lambda {SyslogProtocol::Logger.new("space station", "some shit", 'test test')}.should.raise ArgumentError
   end
 
   it "generates packets" do

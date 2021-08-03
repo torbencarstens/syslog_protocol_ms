@@ -2,7 +2,7 @@ require File.expand_path('../helper', __FILE__)
 
 describe "a syslog packet" do
 
-  @p = SyslogProtocolMs::Packet.new
+  @p = SyslogProtocol::Packet.new
 
   it "should embarrass a person who does not set the fields" do
     lambda { @p.to_s }.should.raise RuntimeError

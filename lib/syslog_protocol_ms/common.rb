@@ -1,4 +1,4 @@
-module SyslogProtocolMs
+module SyslogProtocol
   # These hashes stolen from Syslog.pm
 
   FACILITIES = {
