@@ -1,4 +1,4 @@
-module SyslogProtocol
+module SyslogProtocolMs
   class Logger
     def initialize(hostname, tag, facility)
       @packet = Packet.new
@@ -6,7 +6,7 @@ module SyslogProtocol
       @packet.tag      = tag
       @packet.facility = facility
     end
-    
+
     SEVERITIES.each do |k,v|
       define_method(k) do |content|
         raise ArgumentError.new("Message may not be omitted") unless content and content.length > 0

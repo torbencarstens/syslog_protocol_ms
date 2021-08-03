@@ -10,4 +10,4 @@ end
 require 'bacon'
 Bacon.summary_at_exit
 
-require 'syslog_protocol'
+require 'syslog_protocol_ms'

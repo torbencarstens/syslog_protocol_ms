@@ -6,8 +6,8 @@ roughly conforms to the murky shade of grey known as http://www.faqs.org/rfcs/rf
 
 ### Manipulate packets manually
 
-    require 'syslog_protocol'
-    
+    require 'syslog_protocol_ms'
+
     p = SyslogProtocol::Packet.new
     p.hostname = "space_station"
     p.facility = "kern"
@@ -32,8 +32,8 @@ roughly conforms to the murky shade of grey known as http://www.faqs.org/rfcs/rf
 
 ### Use a Logger to generate packets
 
-    require 'syslog_protocol'
-    
+    require 'syslog_protocol_ms'
+
     logger = SyslogProtocol::Logger.new("space_station", "uucp")
     logger.debug("looking for uucp on board the space station")
     # => "<67>Aug  1 14:02:29 space_station looking for uucp on board the space station"
@@ -43,8 +43,8 @@ roughly conforms to the murky shade of grey known as http://www.faqs.org/rfcs/rf
 
 ### Parse packets
 
-    require 'syslog_protocol'
-    
+    require 'syslog_protocol_ms'
+
     p = SyslogProtocol.parse("<34>Oct 11 22:14:15 space_station space is really getting to me")
     p.facility
     # => 4

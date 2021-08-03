@@ -12,10 +12,10 @@ Gem::Specification.new do |s|
   ## Leave these as is they will be modified for you by the rake gemspec task.
   ## If your rubyforge_project name is different, then edit it and comment out
   ## the sub! line in the Rakefile
-  s.name              = 'syslog_protocol'
-  s.version           = '0.9.2'
-  s.date              = "2009-08-01"
-  # s.rubyforge_project = 'syslog_protocol'
+  s.name              = 'syslog_protocol_ms'
+  s.version           = '0.10.0'
+  s.date              = "2021-08-03"
+  # s.rubyforge_project = 'syslog_protocol_ms'
 
   ## Make sure your summary is short. The description may be as long
   ## as you like.
@@ -25,9 +25,9 @@ Gem::Specification.new do |s|
   ## List the primary authors. If there are a bunch of authors, it's probably
   ## better to set the email to an email list or something. If you don't have
   ## a custom homepage, consider using your GitHub URL or the like.
-  s.authors = ["Jake Douglas", 'Eric Lindvall']
-  s.email = [ "jakecdouglas@gmail.com", 'eric@5stops.com' ]
-  s.homepage = 'https://github.com/eric/syslog_protocol'
+  s.authors = ["Jake Douglas", 'Eric Lindvall', 'Torben Carstens']
+  s.email = [ "jakecdouglas@gmail.com", 'eric@5stops.com', 'rubygems@carstens.tech' ]
+  s.homepage = 'https://github.com/torbencarstens/syslog_protocol_ms'
 
   ## This gets added to the $LOAD_PATH so that 'lib/NAME.rb' can be required as
   ## require 'NAME.rb' or'/lib/NAME/file.rb' can be as require 'NAME/file.rb'
@@ -62,12 +62,12 @@ Gem::Specification.new do |s|
     Gemfile
     README.md
     Rakefile
-    lib/syslog_protocol.rb
-    lib/syslog_protocol/common.rb
-    lib/syslog_protocol/logger.rb
-    lib/syslog_protocol/packet.rb
-    lib/syslog_protocol/parser.rb
-    syslog_protocol.gemspec
+    lib/syslog_protocol_ms.rb
+    lib/syslog_protocol_ms/common.rb
+    lib/syslog_protocol_ms/logger.rb
+    lib/syslog_protocol_ms/packet.rb
+    lib/syslog_protocol_ms/parser.rb
+    syslog_protocol_ms.gemspec
     test/helper.rb
     test/test_logger.rb
     test/test_packet.rb

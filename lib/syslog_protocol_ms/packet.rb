@@ -1,4 +1,4 @@
-module SyslogProtocol
+module SyslogProtocolMs
   class Packet
     attr_reader :facility, :severity, :hostname, :tag
     attr_accessor :time, :content
@@ -115,7 +115,7 @@ module SyslogProtocol
       # what would normally be a preceding zero, be instead an extra space.
       day = time.strftime("%d")
       day = day.sub(/^0/, ' ') if day =~ /^0\d/
-      time.strftime("%b #{day} %H:%M:%S")
+      time.strftime("%b #{day} %H:%M:%S.%3N")
     end
 
     if "".respond_to?(:bytesize)
